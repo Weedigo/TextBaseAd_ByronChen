@@ -3,6 +3,7 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
+import Game.Board;
 
 import java.util.Scanner;
 
@@ -32,6 +33,8 @@ public class Runner {
         //Setup player 1 and the input scanner
         Person player1 = new Person("FirstName", "FamilyName", 0,0);
         building[0][0].enterRoom(player1);
+        Board Arena = new Board(building);
+        Arena.printBoard();
         Scanner in = new Scanner(System.in);
         while(gameOn)
         {
