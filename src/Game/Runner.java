@@ -4,7 +4,7 @@ import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
 import Game.Board;
-
+import Rooms.byronRoom;
 import java.util.Scanner;
 
 public class Runner {
@@ -29,6 +29,10 @@ public class Runner {
         int x = (int)(Math.random()*building.length);
         int y = (int)(Math.random()*building.length);
         building[x][y] = new WinningRoom(x, y);
+
+        int w = (int)(Math.random()*building.length);
+        int e = (int)(Math.random()*building.length);
+        building[w][e] = new byronRoom(w, e);
 
         //Setup player 1 and the input scanner
         Person player1 = new Person("FirstName", "FamilyName", 0,0);

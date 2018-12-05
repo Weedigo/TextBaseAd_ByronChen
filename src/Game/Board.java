@@ -8,8 +8,9 @@ public class Board {
     private int length;
     private int width;
 
-    public Board(int length, int width) {
-        this.map= new Room[length][width];
+    public Board(Room [] [] stuff)
+    {
+        this.map= stuff;
     }
 
     public Room[][] getBoard() {
