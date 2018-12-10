@@ -3,8 +3,7 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
-import Game.Board;
-import Rooms.byronRoom;
+
 import java.util.Scanner;
 
 public class Runner {
@@ -14,7 +13,7 @@ public class Runner {
 
     public static void main(String[] args)
     {
-        Room[][] building = new Room[5][5];
+        Room[][] building = new Room[10][10];
 
         //Fill the building with normal rooms
         for (int x = 0; x<building.length; x++)
@@ -30,10 +29,6 @@ public class Runner {
         int y = (int)(Math.random()*building.length);
         building[x][y] = new WinningRoom(x, y);
 
-        int w = (int)(Math.random()*building.length);
-        int e = (int)(Math.random()*building.length);
-        building[w][e] = new byronRoom(w, e);
-
         //Setup player 1 and the input scanner
         Person player1 = new Person("FirstName", "FamilyName", 0,0);
         building[0][0].enterRoom(player1);
@@ -47,13 +42,6 @@ public class Runner {
             if(validMove(move, player1, building))
             {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-                // String bricks = "";
-                //for(int i = 0; i < building.length; i++){
-                //	for(int k = 0; k < building[i].length; k++){
-                //		System.out.println("X");
-                //	}
-                // } //
-
             }
             else {
                 System.out.println("Please choose a valid move.");
