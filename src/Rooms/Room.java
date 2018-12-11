@@ -33,4 +33,9 @@ public class Room {
         occupant = null;
     }
 
+    public String toString() {
+        String byron= "[]";
+        return byron;
+    }
+
 }

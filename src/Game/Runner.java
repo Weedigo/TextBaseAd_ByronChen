@@ -13,7 +13,7 @@ public class Runner {
 
     public static void main(String[] args)
     {
-        Room[][] building = new Room[10][10];
+        Room[][] building = new Room[3][3];
 
         //Fill the building with normal rooms
         for (int x = 0; x<building.length; x++)

@@ -4,28 +4,36 @@ import Rooms.Room;
 import People.Person;
 
 public class Board {
-    private Room[][] map;
-    private int length;
-    private int width;
-
-    public Board(Room [] [] stuff)
+    private Room[][] Board;
+    public Board(Room [][] Board)
     {
-        this.map= stuff;
+        this.Board= Board;
     }
-
-    public Room[][] getBoard() {
-        return this.map;
-    }
-
-    public void printBoard()
-    {
-        String blocks ="";
-        for(int i=0; i< this.map.length; i++) {
-            blocks="";
-            for(int j =0; j<map[i].length; j++) {
-                blocks = blocks + this.map[i][j].toString();
+        public void fill ()
+        {
+            String play = "";
+            for(int i = 0; i < Board.length; i++)
+            {
+                for(int j = 0; j < Board[i].length; j++)
+                {
+                    play += Board[i][j];
+                    System.out.println(play);
+                }
             }
-            System.out.println(blocks);
         }
+        public void printBoard()
+        {
+            String blocks ="";
+            for(int i=0; i< this.Board.length; i++)
+            {
+                for(int j =0; j<Board[i].length; j++)
+                {
+                    blocks += Board[i][j].toString();
+                }
+            System.out.println(blocks);
+                blocks= "";
+        }
+
     }
+
 }
