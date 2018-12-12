@@ -34,8 +34,12 @@ public class Room {
     }
 
     public String toString() {
-        String byron= "[]";
-        return byron;
+        String brack = "";
+        brack = brack + "[ ]";
+        if (occupant != null) {
+            return "[x}";
+        }
+        return brack;
     }
 
 }

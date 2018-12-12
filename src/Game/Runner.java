@@ -32,8 +32,8 @@ public class Runner {
         //Setup player 1 and the input scanner
         Person player1 = new Person("FirstName", "FamilyName", 0,0);
         building[0][0].enterRoom(player1);
-        Board Arena = new Board(building);
-        Arena.printBoard();
+        Board map = new Board(building);
+        map.printBoard();
         Scanner in = new Scanner(System.in);
         while(gameOn)
         {
@@ -42,6 +42,7 @@ public class Runner {
             if(validMove(move, player1, building))
             {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+                map.printBoard();
             }
             else {
                 System.out.println("Please choose a valid move.");
