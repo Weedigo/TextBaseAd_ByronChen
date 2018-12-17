@@ -8,6 +8,8 @@ public class Person {
     String familyName;
     int xLoc, yLoc;
     int health;
+    int exp;
+    int level;
 
 
     public int getxLoc() {
@@ -26,13 +28,14 @@ public class Person {
         this.yLoc = yLoc;
     }
 
-    public Person (String firstName, String familyName, int xLoc, int yLoc, int health)
+    public Person (String firstName, String familyName, int xLoc, int yLoc, int health, int level)
     {
         this.firstName = firstName;
         this.familyName = familyName;
         this.xLoc = xLoc;
         this.yLoc = yLoc;
         this.health = health;
+        this.level = level;
     }
 //////////////////////////
     public int getHealth(){
@@ -42,5 +45,15 @@ public class Person {
     public void removeHealth(int damage) {
         this.health -= damage;
     }
-
+    public void earnExp(int earned) {
+        exp = exp + earned;
+        System.out.println("You got exp nice " + exp);
+    }
+    public int getExp() {
+        return exp;
+    }
+    public void levelUp() {
+        level = level + 1;
+        System.out.println("Level up! " + level);
+    }
 }

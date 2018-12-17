@@ -30,7 +30,7 @@ public class Runner {
         building[x][y] = new WinningRoom(x, y);
 
         //Setup player 1 and the input scanner
-        Person player1 = new Person("FirstName", "FamilyName", 0,0, 64);
+        Person player1 = new Person("FirstName", "FamilyName", 0,0, 64, 0);
         building[0][0].enterRoom(player1);
         Board map = new Board(building);
         map.printBoard();
@@ -47,8 +47,10 @@ public class Runner {
             else {
                 System.out.println("Please choose a valid move.");
             }
-
-
+            while(player1.getExp() == 2){
+                player1.levelUp();
+                break;
+            }
         }
         in.close();
     }
