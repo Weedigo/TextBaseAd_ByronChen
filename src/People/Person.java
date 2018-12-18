@@ -8,8 +8,7 @@ public class Person {
     String familyName;
     int xLoc, yLoc;
     int health;
-    int exp;
-    int level;
+    int money;
 
 
     public int getxLoc() {
@@ -28,32 +27,37 @@ public class Person {
         this.yLoc = yLoc;
     }
 
-    public Person (String firstName, String familyName, int xLoc, int yLoc, int health, int level)
+    public Person (String firstName, String familyName, int xLoc, int yLoc, int health, int money)
     {
         this.firstName = firstName;
         this.familyName = familyName;
         this.xLoc = xLoc;
         this.yLoc = yLoc;
         this.health = health;
-        this.level = level;
+        this.money = money;
     }
 //////////////////////////
-    public int getHealth(){
+    public int getBalance(){
+        return money;
+    }
+
+    public void loseMoney(int lose) {
+        this.money = money - lose;
+    }
+
+    public void getMoney(int gain) {
+        this.money = money + gain;
+    }
+
+    public int checkHealth(){
         return health;
     }
 
-    public void removeHealth(int damage) {
-        this.health -= damage;
+    public void loseHealth(int pain) {
+        this.health = health - pain;
     }
-    public void earnExp(int earned) {
-        exp = exp + earned;
-        System.out.println("You got exp nice " + exp);
-    }
-    public int getExp() {
-        return exp;
-    }
-    public void levelUp() {
-        level = level + 1;
-        System.out.println("Level up! " + level);
+
+    public void getHealth(int soothe) {
+        this.health = health + soothe;
     }
 }

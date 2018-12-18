@@ -2,7 +2,8 @@ package Game;
 
 import People.Person;
 import Rooms.Room;
-import Rooms.WinningRoom;
+import Rooms.Casino;
+import Rooms.WorkPlace;
 
 import java.util.Scanner;
 
@@ -13,7 +14,27 @@ public class Runner {
 
     public static void main(String[] args)
     {
-        Room[][] building = new Room[3][3];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Chose your city size: large, medium, or small.");
+        String size = "";
+        int area = 0;
+        while(!size.equals("large") || !size.equals("small")){
+            size = sc.nextLine();
+            size= size.toLowerCase().trim();
+            if(size.equals("large")){
+                area = 7;
+                break;
+            } else if(size.equals("small")){
+                area = 3;
+                break;
+            } else{
+                area = 5;
+                break;
+            }
+        }
+
+        Room[][] building = new Room[area][area];
 
         //Fill the building with normal rooms
         for (int x = 0; x<building.length; x++)
@@ -27,10 +48,14 @@ public class Runner {
         //Create a random winning room.
         int x = (int)(Math.random()*building.length);
         int y = (int)(Math.random()*building.length);
-        building[x][y] = new WinningRoom(x, y);
+        building[x][y] = new Casino(x, y);
+
+        int q = (int)(Math.random()*building.length);
+        int w = (int)(Math.random()*building.length);
+        building[q][w] = new WorkPlace(q, w);
 
         //Setup player 1 and the input scanner
-        Person player1 = new Person("FirstName", "FamilyName", 0,0, 64, 0);
+        Person player1 = new Person("FirstName", "FamilyName", 0,0, 5, 350);
         building[0][0].enterRoom(player1);
         Board map = new Board(building);
         map.printBoard();
@@ -47,9 +72,8 @@ public class Runner {
             else {
                 System.out.println("Please choose a valid move.");
             }
-            while(player1.getExp() == 2){
-                player1.levelUp();
-                break;
+            if(player1.checkHealth() == 0){
+                System.out.println("You died");
             }
         }
         in.close();
