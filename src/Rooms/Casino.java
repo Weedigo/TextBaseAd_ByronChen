@@ -37,6 +37,13 @@ public class Casino extends Room
             System.out.println("You keep walking.");
         }
     }
-
+    public String toString() {
+        String brack = "";
+        brack = "[C]";
+        if (occupant != null) {
+            return "[x}";
+        }
+        return brack;
+    }
 
 }

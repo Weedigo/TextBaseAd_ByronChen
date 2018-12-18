@@ -9,18 +9,7 @@ public class Board {
     {
         this.map= Board;
     }
-        public void fill ()
-        {
-            String play = "";
-            for(int i = 0; i < map.length; i++)
-            {
-                for(int j = 0; j < map[i].length; j++)
-                {
-                    play += map[i][j];
-                    System.out.println(play);
-                }
-            }
-        }
+
         public void printBoard()
         {
             String blocks ="";
