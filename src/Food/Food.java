@@ -1,5 +1,6 @@
 package Food;
+import People.Person;
 
 public interface Food {
-    void eat();
+    void eat(Person x);
 }

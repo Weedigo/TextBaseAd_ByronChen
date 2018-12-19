@@ -1,6 +1,5 @@
 package Rooms;
 
-import Game.Runner;
 import Jobs.Construction;
 import Jobs.Delivery;
 import Jobs.Janitor;
@@ -12,9 +11,9 @@ import java.util.Scanner;
 
 public class WorkPlace extends Room
 {
-    Jobs Construction;
-    Jobs Delivery;
-    Jobs Janitor;
+    private Jobs Construction;
+    private Jobs Delivery;
+    private Jobs Janitor;
     public WorkPlace(int x, int y) {
         super(x, y);
         this.Construction = new Construction();
@@ -30,7 +29,7 @@ public class WorkPlace extends Room
         System.out.println("You got offered a variety of jobs: construction, delivery, and janitor. Choose one.");
         Scanner sc = new Scanner(System.in);
         String ans = sc.nextLine();
-        ans.toLowerCase().trim();
+        ans =ans.toLowerCase();
         if(ans.equals("construction")){
             System.out.println("You do construction and your health diminishes by a lot from hard labor.");
             Construction.hurt(x);
@@ -54,5 +53,12 @@ public class WorkPlace extends Room
         } else {
             System.out.println("You stay unemployed, your balance is still $" + x.getBalance());
         }
+    }
+    public String toString() {
+        String brack = "[W]";
+        if (occupant != null) {
+            return "[x}";
+        }
+        return brack;
     }
 }

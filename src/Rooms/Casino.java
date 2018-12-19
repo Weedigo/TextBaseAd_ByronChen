@@ -1,6 +1,5 @@
 package Rooms;
 
-import Game.Runner;
 import People.Person;
 
 import java.util.Scanner;
@@ -25,8 +24,8 @@ public class Casino extends Room
             System.out.println("You went in and gambled...");
             int win = (int)(Math.random()*5+1);
             if(win == 1){
-                System.out.println("You won 200 dollars!");
-                x.getMoney(200);
+                System.out.println("You won 100 dollars!");
+                x.getMoney(100);
                 System.out.println("You now have: $" + x.getBalance());
             } else{
                 System.out.println("You lost and lose 50 dollars.");
@@ -38,8 +37,7 @@ public class Casino extends Room
         }
     }
     public String toString() {
-        String brack = "";
-        brack = "[C]";
+        String brack = "[C]";
         if (occupant != null) {
             return "[x}";
         }

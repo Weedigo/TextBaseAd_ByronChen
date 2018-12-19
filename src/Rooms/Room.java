@@ -18,7 +18,7 @@ public class Room {
      */
     public void enterRoom(Person x)
     {
-        System.out.println("You enter a plain old room");
+        System.out.println("You walk to another block...");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
@@ -26,9 +26,8 @@ public class Room {
 
     /**
      * Removes the player from the room.
-     * @param x
      */
-    public void leaveRoom(Person x)
+    public void leaveRoom()
     {
         occupant = null;
     }
