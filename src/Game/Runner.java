@@ -33,7 +33,8 @@ public class Runner {
         System.out.println("Welcome to the first establishment of the game of life "+ name + ".");
         System.out.println("In this part of the story, you are stranded in an unknown city, with no way back home.");
         System.out.println("There is a restaurant, a casino, and a job center in the city.");
-        System.out.println("Using these landmarks, you can try to make $700 dollars without losing all your health to go back home.");
+        System.out.println("Using these landmarks, you can try to make $700 dollars to go back home.");
+        System.out.println("You will die if you get to 0 health.");
         System.out.println("However, you could also explore the city as long as you want, as long as you are alive.");
         System.out.println("You have $350 in your pocket and your health level is 5.");
         System.out.println("Good luck, and most of all, enjoy your experience in this city.");
