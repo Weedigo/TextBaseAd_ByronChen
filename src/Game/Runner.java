@@ -118,7 +118,6 @@ public class Runner {
      * @param move the move chosen
      * @param p person moving
      * @param map the 2D array of blocks
-     * @return
      */
     private static boolean validMove(String move, Person p, Room[][] map)
     {
