@@ -31,7 +31,7 @@ public class Room {
     {
         occupant = null;
     }
-
+//prints the cell out on the board, default look.
     public String toString() {
         String brack = "";
         brack = brack + "[ ]";

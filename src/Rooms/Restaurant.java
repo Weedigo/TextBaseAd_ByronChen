@@ -20,6 +20,10 @@ public class Restaurant extends Room
         this.Beans = new Beans();
     }
 
+    /**
+     * The player enters the restaurant, here is the interaction that is different from a normal room.
+     * @param x the Person entering
+     */
     @Override
     public void enterRoom(Person x) {
         occupant = x;
@@ -57,6 +61,7 @@ public class Restaurant extends Room
         }
 
     }
+    //show the Restaurant on the map
     public String toString() {
         String brack = "[R]";
         if (occupant != null) {

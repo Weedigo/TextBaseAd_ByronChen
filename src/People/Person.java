@@ -2,6 +2,7 @@ package People;
 
 /**
  * Person represents the player as they move through the game.
+ * Here the values of the player are set
  */
 public class Person {
     private String name;
@@ -34,7 +35,13 @@ public class Person {
         this.health = health;
         this.money = money;
     }
-//////////////////////////
+
+    /**
+     * Overload method of setting name
+     * The default name is Byron, and it will only be given to the user if we deem their name not long enough.
+     * Otherwise we will use the method with parameter so user can set their own name.
+     */
+
     public void setName(){
         this.name = "Byron";
     }
@@ -44,6 +51,12 @@ public class Person {
     public String getName(){
         return name;
     }
+
+    /**
+     * methods related to player attributes like money or health. It:
+     * Add/subtract them
+     * Return them
+     */
     public int getBalance(){
         return money;
     }

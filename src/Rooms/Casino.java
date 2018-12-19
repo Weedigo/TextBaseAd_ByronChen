@@ -10,6 +10,11 @@ public class Casino extends Room
         super(x, y);
     }
 
+    /**
+     * The player enters the Casino "room", this will be the interaction that follows in a Casino.
+     * @param x the Person entering
+     *
+     */
     @Override
     public void enterRoom(Person x) {
         occupant = x;
@@ -36,6 +41,7 @@ public class Casino extends Room
             System.out.println("You keep walking.");
         }
     }
+    //show the Casino on the map
     public String toString() {
         String brack = "[C]";
         if (occupant != null) {

@@ -8,7 +8,7 @@ public class Board {
     {
         this.map= Board;
     }
-
+//prints out the board
         public void printBoard()
         {
             String blocks ="";

@@ -1,5 +1,4 @@
 package Rooms;
-
 import Jobs.Construction;
 import Jobs.Delivery;
 import Jobs.Janitor;
@@ -21,6 +20,10 @@ public class WorkPlace extends Room
         this.Janitor = new Janitor();
     }
 
+    /**
+     * The user enters the Workplace. Here they can choose jobs. Each with their own affect.
+     * @param x the Person entering
+     */
     @Override
     public void enterRoom(Person x) {
         occupant = x;
@@ -31,21 +34,20 @@ public class WorkPlace extends Room
         String ans = sc.nextLine();
         ans =ans.toLowerCase();
         if(ans.equals("construction")){
-            System.out.println("You do construction and your health diminishes by a lot from hard labor.");
+            Construction.jobDesc();
             Construction.hurt(x);
             Construction.pay(x);
             System.out.println("Your balance is now: $" + x.getBalance());
             System.out.println("You're health rating is " + x.checkHealth());
         }
         else if(ans.equals("delivery")){
-            System.out.println("You delivery food in the comfort of your car.");
-            System.out.println("Even thought you make less due to the cost of car and gas, you are happy.");
+            Delivery.jobDesc();
             Delivery.pay(x);
             System.out.println("Your balance is now: $" + x.getBalance());
             System.out.println("You're health rating is still " + x.checkHealth());
         }
         else if(ans.equals("janitor")){
-            System.out.println("You work a good schedule job, but the hours are really low and the constant smell of chlorine damages your health.");
+            Janitor.jobDesc();
             Janitor.hurt(x);
             Janitor.pay(x);
             System.out.println("Your balance is now: $" + x.getBalance());
@@ -54,6 +56,7 @@ public class WorkPlace extends Room
             System.out.println("You stay unemployed, your balance is still $" + x.getBalance());
         }
     }
+    //show the WorkPlace on the map
     public String toString() {
         String brack = "[W]";
         if (occupant != null) {

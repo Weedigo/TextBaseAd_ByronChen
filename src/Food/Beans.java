@@ -1,6 +1,6 @@
 package Food;
 import People.Person;
-
+//Implements what eating beans does.
 public class Beans implements Food{
     public void eat(Person x){
         x.getHealth(2);
